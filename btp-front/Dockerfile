@@ -1,0 +1,13 @@
+FROM ubuntu:20.04
+
+RUN apt update
+RUN apt -y install tzdata
+RUN apt -y install nginx git
+
+RUN mkdir /btp-ui
+RUN git clone https://github.com/mipxtx/btp-ui.git /btp-ui
+
+COPY default.conf /etc/nginx/sites-available/default
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

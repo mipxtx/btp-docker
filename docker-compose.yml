@@ -1,0 +1,16 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  btp-front:
+    image: mamba:btp-front
+    ports:
+      - "80:80"
+    links:
+      - btp-php
+  btp-php:
+    image: mamba:btp-php
+    links:
+      - btpd
+  btpd:
+    image: mamba:btpd
+    ports:
+      - "38001:38001"

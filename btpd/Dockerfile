@@ -6,10 +6,13 @@ RUN mkdir /btpd
 RUN git clone https://github.com/mambaru/btpd.git /btpd
 RUN cd btpd && CXX=g++-7 make shared ARG=-j1
 RUN mkdir -p /storage/btp
-COPY . /storage/btp
-RUN chmod +x /storage/btp/run.sh
+RUN mkdir -p /logs
+
+COPY . /btpd
+RUN chmod +x /btpd/run.sh
+
 
 EXPOSE 37000 37001 37002 37003 37004 38001 38001/udp
 
-ENTRYPOINT ["/storage/btp/run.sh"]
+ENTRYPOINT ["/btpd/run.sh"]
 
