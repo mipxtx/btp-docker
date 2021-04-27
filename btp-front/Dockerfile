@@ -7,6 +7,9 @@ RUN apt -y install nginx git
 RUN mkdir /btp-ui
 RUN git clone https://github.com/mipxtx/btp-ui.git /btp-ui
 
+RUN cd  /btp-ui/www && cp -r btp-private-sample btp-private
+
+
 COPY default.conf /etc/nginx/sites-available/default
 EXPOSE 80
 

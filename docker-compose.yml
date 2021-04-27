@@ -6,6 +6,8 @@ services:
       - "80:80"
     links:
       - btp-php
+    volumes:
+        - ./logs/nginx:/var/log/nginx
   btp-php:
     image: mamba:btp-php
     links:
@@ -14,3 +16,6 @@ services:
     image: mamba:btpd
     ports:
       - "38001:38001"
+    volumes:
+      - ./logs/btpd:/logs
+      - ./storage:/storage
