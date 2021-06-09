@@ -16,6 +16,11 @@ services:
     image: mamba:btpd
     ports:
       - "38001:38001"
+      - "37000:37000"
+      - "37001:37001"
+      - "37002:37002"
+      - "37003:37003"
+      - "37004:37004"
     volumes:
       - ./logs/btpd:/logs
       - ./storage:/storage
