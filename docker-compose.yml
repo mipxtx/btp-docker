@@ -1,7 +1,7 @@
 version: "3.9"  # optional since v1.27.0
 services:
   btp-front:
-    image: mamba:btp-front
+    build: btp-front
     ports:
       - "80:80"
     links:
@@ -9,18 +9,19 @@ services:
     volumes:
         - ./logs/nginx:/var/log/nginx
   btp-php:
-    image: mamba:btp-php
+    build: btp-php
     links:
       - btpd
   btpd:
-    image: mamba:btpd
+    build: btpd
     ports:
-      - "38001:38001"
       - "37000:37000"
       - "37001:37001"
       - "37002:37002"
       - "37003:37003"
       - "37004:37004"
+      - "38001:38001"
+      - "38001:38001/udp"
     volumes:
       - ./logs/btpd:/logs
       - ./storage:/storage

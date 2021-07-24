@@ -1,0 +1,5 @@
+services:
+  trans:
+    build: .
+    ports:
+      - "38001:38001/udp"
