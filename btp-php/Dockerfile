@@ -1,8 +1,8 @@
 FROM ubuntu:20.04
 
-RUN apt update
-RUN apt install -y tzdata
-RUN apt install -y php-fpm git
+RUN apt-get update
+RUN apt-get install -y tzdata
+RUN apt-get install -y php-fpm git
 RUN mkdir /btp-ui
 
 RUN git clone https://github.com/mipxtx/btp-ui.git /btp-ui

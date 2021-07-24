@@ -1,8 +1,8 @@
 FROM ubuntu:20.04
 
-RUN apt update
-RUN apt -y install tzdata
-RUN apt -y install nginx git
+RUN apt-get update
+RUN apt-get -y install tzdata
+RUN apt-get -y install nginx git
 
 RUN mkdir /btp-ui
 RUN git clone https://github.com/mipxtx/btp-ui.git /btp-ui

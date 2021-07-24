@@ -1,8 +1,8 @@
 FROM ubuntu:20.04
-RUN apt update
-RUN apt install -y tzdata
-RUN apt install -y build-essential libsnappy-dev libbz2-dev liblz4-dev libzstd-dev g++-7  git cmake
-RUN apt install -y curl zlib1g-dev
+RUN apt-get update
+RUN apt-get install -y tzdata
+RUN apt-get install -y build-essential libsnappy-dev libbz2-dev liblz4-dev libzstd-dev g++-7  git cmake
+RUN apt-get install -y curl zlib1g-dev
 RUN mkdir /btpd
 RUN git clone https://github.com/mambaru/btpd.git /btpd
 RUN cd btpd && CXX=g++-7 make shared ARG=-j1
