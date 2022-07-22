@@ -13,6 +13,7 @@ services:
     links:
       - btpd
   btpd:
+    platform: linux/amd64
     build: btpd
     ports:
       - "37000:37000"
