@@ -15,6 +15,7 @@ services:
   btpd:
     platform: linux/amd64
     build: btpd
+    platform: linux/amd64
     ports:
       - "37000:37000"
       - "37001:37001"
